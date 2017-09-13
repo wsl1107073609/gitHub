@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>javaScript</title>
+</head>
+<body>
+	<!--sort()-->
+	<script type="text/javascript">
+	/*
+		function sortNumber(a, b){
+			return a - b;
+		}
+
+		var arr = new Array("1","16","26","5","76");
+		document.write(arr + "<br/>");
+		document.write(arr.sort() + "<br/>");
+		document.write(arr.sort(sortNumber) + "<br/>");	
+	*/	
+	</script>
+
+	<!--正则表达式-->
+	<script type="text/javascript">
+		var regExp = new RegExp("e");
+
+		document.write(regExp.test("The best things in life are free") + "<br/>");
+		document.write(regExp.exec("The best things in life are free") + "<br/>");
+
+		regExp.compile("d");
+		document.write(regExp.test("The best things in life are free") + "<br/>");
+	</script>
+
+    <!--BOW:浏览器对象模型-->
+	<p id="demo"></p>
+
+	<script type="text/javascript">
+		
+		/*show the messages of browser*/
+		var x = window.innerHeight;
+		var y = window.innerWidth;
+
+		var z = document.getElementById("demo");
+		z.innerHTML = "The browser's height is " + x + " and width is " + y;
+
+		/*show the messages of the screen*/
+		document.write("屏幕可用宽度：" + screen.availWidth + "<br/>");
+		document.write("屏幕可用高度：" + screen.availHeight + "<br/");
+
+	</script>
+
+</body>
+</html>

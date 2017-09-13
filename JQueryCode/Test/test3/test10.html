@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function myFunction(){
+			var x = 5;
+			document.getElementById("demo").innerHTML = x;
+		}
+		
+	</script>
+</head>
+<body>
+	<script>
+		var str = "Hello";
+		document.write(str.length + "<br>");
+		document.write(str.indexOf("H") + "<br>");
+		document.write(str.replace("Hello","world") + "<br>");
+		document.write(str.search("H") + "<br>");
+		document.write(str.match("world") + "<br>");
+
+
+		var person = new Object()
+		person.name = "Bill";
+		person.age = "56";
+		document.write(person.name + " is " + person.age + " yeas old!" + "<br>");
+
+		var message = "my name is cherry."
+		document.write(message.toUpperCase() + "<br>");
+
+	</script>
+	<div id="demo"></div>
+	<button onclick="myFunction()">click</button>
+</body>
+</html>

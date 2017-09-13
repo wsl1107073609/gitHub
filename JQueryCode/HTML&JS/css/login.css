@@ -1,0 +1,34 @@
+.content1-mid {
+	padding-left: 200px;
+	padding-right: 200px;
+	height: 800px;
+}
+
+.content1-mid-top {
+	height: 200px;
+}
+
+.content1-mid-top h1 {
+	font-size: 40px;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	text-align: center;
+	padding: 60px;
+	color: #3c763d;
+}
+
+.content1-mid-mid {
+	height: 300px;
+}
+
+.button {
+	padding-top: 60px;
+	padding-left: 20px;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #3c763d;
+	border-color: #3c763d;
+	margin-left: 220px;
+}

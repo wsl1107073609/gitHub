@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script>
+		//检验浏览器是否启用cookie
+	    function checkCookies(){
+	    	if (navigator.cookieEnabled == true) {
+	    		alert("已启用了cookie");
+	    	}
+	    	else{
+	    		alert("未启用cookie");
+	    	}
+	    }
+	    //把小写字符转换成大写
+	    function toUpperCase(){
+	    	var x = document.getElementById("fname");
+	    	x.value = x.value.toUpperCase();
+	    }
+	</script>
+		
+</head>
+<body onload="checkCookies()">
+	
+
+	<p>提示框会告诉你，浏览器是否已启用cookie</p>
+	请输入英文字符：<input type="text" id="fname" onchange="toUpperCase()">
+	<p>当离开输入字段时，会触发将文本转换成大写</p>
+
+	<div id="div1">
+		<p id="p1">This is the first paragraph.</p>
+		<p id="p2">This is the second paragraph.</p>
+
+	</div>
+	<script type="text/javascript">
+		//添加节点元素
+	    var para = document.createElement("p");
+	    var node = document.createTextNode("This is a new paragraph.");
+	    para.appendChild(node);
+
+	    var element = document.getElementById("div1");
+	    element.appendChild(para);
+	</script>
+
+
+
+</body>
+</html>

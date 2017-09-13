@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  </head>
+  <body>
+      <input id="whichkey" value="">
+      <div id="log"></div>
+      <script>
+        $('#whichkey').bind('keydown',function(e){
+        $('#log').html(e.type + ': ' +  e.which );  });
+      </script>
+    </body>
+  </html>

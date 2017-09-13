@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>popupAlert</title>
+
+	<script type="text/javascript">
+		function disp_alert(){
+			//alert("Warinning!!!");
+			alert("Thank you again! Here, we will show you " + "\n" + "how to add the broken line!");
+		}
+
+		function disp_confirm(){
+			var r = confirm("press a button!");
+			if (r == true) {
+				alert("You pressed ok!");
+			}
+			else{
+				alert("You pressed Cancle!");
+			}
+		}
+
+		function disp_prompt(){
+			var name = prompt("Please fill your name：", "Bill Gates");
+			if (name != null && name != "") {
+				document.write("Hello, " + name + ". How are you today?");
+			}
+		}
+
+		function showAlert(){
+			var t = setTimeout("alert('5s!')", 5000);
+		}
+
+
+
+	</script>
+
+
+
+</head>
+<body>
+
+
+	<!--alert()-->
+	<input type="button" value="显示警告" onclick="disp_alert()">
+
+	<!--confirm()-->
+	<input type="button" value="显示确认" onclick="disp_confirm()">
+
+	<!--prompt()-->
+	<input type="button" value="显示提示" onclick="disp_prompt()">
+
+	<form>
+		<input type="button" vlaue="5s后显示警示框" onclick="showAlert()">
+	</form>
+
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<!--
+	<p>如果时间小于20:00，请输出GOOG Day!</p>
+	<button onclick="myFunction()">click</button>
+	<p id="demo"></p> 
+
+	<script>
+		function myFunction(){
+			var t = "";		
+
+			var date = new Date();
+			var hour = date.getHours();
+
+			//var hour = new Date().getHours();
+			if(hour<20){
+				t = "Good Day!"
+			}
+			document.getElementById("demo").innerHTML = t;
+		}
+	</script>
+-->
+
+<!--
+    <p>请遍历输出person对象的属性：</p>
+	<button onclick="myFunction()">click</button>
+	<p id="demo"></p> 
+
+	<script>
+		function myFunction(){
+			var t;	
+			var txt = "";
+			var person = {fname:"Bill",lname:"Gates",age:"56"};
+			for(t in person){
+				txt = txt + person[t];
+			}
+			document.getElementById("demo").innerHTML = txt;
+		}
+	</script>
+-->
+<!--
+	<input type="button" value="查看消息" onclick="message()">
+	<script>
+		function message(){
+			var txt = "";
+			try{
+				addlert("Welcome to XIAN!");
+			}
+			catch(err){
+				txt = "本页有一个错误。\n\n";
+				txt = txt + err.message + "\n\n";
+				txt = txt + "点击确定继续。\n\n";
+				alert(txt);
+			}
+		}
+	</script>
+-->
+	<p id="demo">Hello world!</p>
+	<div id="main">
+		<h1>Heading</h1>
+		<p>The DOM is very useful!</p>
+		<p>本例演示<b>getElementsByTagName</b>的方法：</p>
+		<!--改变css-->
+		<input type="button" value="隐藏文本" onclick="document.getElementById('demo').style.visibility='hidden'">
+		<input type="button" value="显示文本" onclick="document.getElementById('demo').style.visibility='visible'">
+	</div>
+	<script>
+		//获取html的标签值
+		var x = document.getElementById("main");
+		var z = x.getElementsByTagName("h1");
+		var y = x.getElementsByTagName("p");
+		document.write("id为main的div的第一个标题的内容是：" + z[0].innerHTML + "<br>");
+		document.write("id为main的div的第一个段落的内容是：" + y[0].innerHTML + "<br>");
+		
+		//改变html的css
+		document.getElementById("demo").style.color = "blue";
+
+	</script>
+
+
+</body>
+</html>

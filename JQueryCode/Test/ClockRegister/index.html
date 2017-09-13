@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test</title>
+	<script src="index.js"></script>
+	<script type="text/javascript">
+		var leftSecond = 10;
+		var inervalId;
+		function Count(){
+			var reg = document.getElementById("butReg");
+			if (leftSecond <= 0) {
+				reg.disabled = "";
+				reg.value = "注册";
+				clearInterval(inervalId);
+			}
+			else{
+				reg.value = "请仔细阅读，还剩" + leftSecond + "秒";
+				leftSecond--;
+			}			
+		}
+		inervalId = setInterval("Count()",1000); //每隔1秒刷新
+	</script>
+</head>
+<body>
+	<script src="index1.js"></script><hr>
+	<button onclick="showAlert()">点击</button><hr>
+	<textarea></textarea>
+	<input id="butReg" type="button" disabled="disabled" value="注册"></input>
+	
+
+</body>
+</html>

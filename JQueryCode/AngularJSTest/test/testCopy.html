@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test Angular.copy</title>
+</head>
+<body ng-app="MyApp">
+	<div ng-controller="ExampleController">
+		<form novalidate class="simple-from">
+			<label>Name: <input type="text" ng-model="user.name"/></label></form><br />
+			<label>Age: <input type="number" ng-model="user.age"/></label></form><br />
+			<label>
+				Gender: <label><input type="radio" ng-model="user.gender" value="male" />male</label>
+						<label><input type="radio" ng-model="user.gender" value="female" />female</label>
+			</label><br/>
+			<button ng-click="reset()">Reset</button>
+			<button ng-click="save(user)">Save</button>
+		</form>
+		<pre>form = {{user | json}}</pre>
+		<pre>master = {{user | json}}</pre>
+	</div>
+
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module("MyApp", []);
+		app.controller("ExampleController", ['$scope', function($scope){
+			$scope.master = {};
+
+			$scope.reset = function(){
+				$scope.user = angular.copy($scope.master);
+			}
+
+			$scope.save = function(user){
+				angular.copy(user, $scope.master);
+			}
+
+			//load的时候执行该方法
+			$scope.reset();
+
+		}]);
+	</script>
+</body>
+</html>

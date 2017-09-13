@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test Angular.equals</title>
+</head>
+<body>
+	<div ng-app="myApp">
+		<div ng-controller="ExampleController">
+			<form>
+				<h3>User1:</h3>
+				<label>Name:</label><input type="text" ng-model="user1.name"/>
+				<label>Age:</label><input type="text" ng-model="user1.age" />
+
+				<h3>User2:</h3>
+				<label>Name:</label><input type="text" ng-model="user2.name"/>
+				<label>Age:</label><input type="text" ng-model="user2.age" />
+
+				<div style="padding-top:20px;padding-bottom:20px;">
+					<input type="button" value="compare" ng-click="Compare()" />
+				</div>
+
+				User1: <pre>{{user1 | json}}</pre>
+				User2: <pre>{{user2 | json}}</pre>
+				Equals: <pre>{{result}}</pre>
+			</form>
+		</div>
+
+		<div ng-controller="ExtendController">
+			<button ng-click="extend()">Click it to validate the angular.extend()</button>
+		</div>
+
+
+
+
+	</div>
+
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module("myApp", []);
+		
+		//test the angular.equals()
+		app.controller("ExampleController", function($scope){
+			$scope.user1 = {};
+			$scope.user2 = {};
+			$scope.Compare = function(){
+				$scope.result = angular.equals($scope.user1, $scope.user2);
+			}
+		});
+
+
+		//test the angular.extend()
+		app.controller("ExtendController", function($scope){
+			$scope.bady = {
+				cry : function(){
+					console.log("I can only cry!");
+				}
+			}
+
+			$scope.adult = {
+				earn : function(){
+					console.log("I can earn money!");
+				}
+
+				lover : 
+				{
+					love : function(){
+						console.log("I love you!");
+					}
+				}
+			}
+
+			$scope.human = {};
+			$scope.extend = function(){
+				angular.extend($scope.human, $scope.bady, $scope.adult);
+				$scope.human.cry();
+				$scope.human.earn();
+
+				$scope.human.lover.love = function(){
+					console.log("I hate you!");
+				}
+				$scope.adult.lover.love();
+				$scope.human.lover.love();
+			}
+
+
+		});
+
+
+
+
+	</script>
+</body>
+</html>

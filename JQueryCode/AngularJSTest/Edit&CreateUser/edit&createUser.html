@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="animate.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+	<script type="text/javascript" src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular-animate.min.js"></script>
+	<title>Edit & Create User & Animate</title>
+</head>
+<body ng-app="MyApp" ng-controller="userCtrl">
+	<div class="container">
+		<h3>Users</h3>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<td>Edit</td>
+					<td>First Name</td>
+					<td>Last Name</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="user in users">
+					<td>
+						<button class="btn btn-primary" ng-click="editUser(user.id)">
+							<span class="glyphicon glyphicon-pencil">&nbsp;Edit</span>
+						</button>
+					</td>
+					<td>{{ user.fName }}</td>
+					<td>{{ user.lName }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+		<button class="btn btn-warning" ng-click="editUser('new')">
+			<span class="glyphicon glyphicon-user"> Create New User </span>
+		</button>
+
+		<hr>
+		<!-- when edit is true, ng-show and ng-hide are all valid-->
+		<h3 ng-show="edit">Create new user:</h3>
+		<h3 ng-hide="edit">Edit user:</h3>
+
+		<!-- ng-disabled：this direction is used to set the disable property of input text, when the return of expression is true, it is disabled
+			如果ng-disabled中的表达式返回true，则表单字段将被禁用
+		-->
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">First Name:</label>
+				<div class="col-sm-10">
+					<input type="text" ng-model="fName" ng-disabled="!edit" placeholder="First Name">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Last Name:</label>
+				<div class="col-sm-10">
+					<input type="text" ng-model="lName" ng-disabled="!edit" placeholder="Last Name">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Password:</label>
+				<div class="col-sm-10">
+					<input type="password" ng-model="passw1" placeholder="Password">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Confirm Password:</label>
+				<div class="col-sm-10">
+					<input type="password" ng-model="passw2"  placeholder="Confirm Password">
+				</div>
+			</div>
+		</form>
+
+		<hr>
+		<!--初始情况：error的值为false ，incomplete的值都为true，ng-disabled返回的值为true，故btn隐藏-->
+		<button class="btn btn-success" ng-disabled="error || incomplete">
+			<span class="glyphicon glyphicon-save">Save Changes</span>
+		</button>
+
+	</div>
+
+<!-- 	<div class="container" ng-app="ngAnimate" style="margin-top:20px;">
+		Hide DIV: <input type="checkbox" ng-model="myCheck">
+		<div id="hideDiv" ng-hide="myCheck"></div>
+	</div> -->
+
+	<div class="container" ng-app="myApp" style="margin-top:20px;">
+		Hide DIV: <input type="checkbox" ng-model="myCheck">
+		<div id="hideDiv" ng-hide="myCheck"></div>
+	</div>
+
+
+	<script type="text/javascript" src="myUser.js"></script>
+	<script type="text/javascript">
+		var app = angular.module("myApp",["ngAnimate"]);
+	</script>
+</body>
+</html>
+
+
+<!--bootstrap btn的几种颜色属性-->
+<!-- 
+btn ：白色
+btn btn-primary : 浅蓝色 
+btn btn-info : 深蓝色
+btn btn-success : 绿色
+btn btn-warning : 黄色
+btn btn-danger : 红色
+btn btn-inverse : 黑色
+-->

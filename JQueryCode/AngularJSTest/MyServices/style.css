@@ -1,0 +1,11 @@
+#services {
+	list-style-type: none;
+}
+
+.ng-scope {
+	height:30px;
+}
+
+.ng-binding span{
+	float:right;
+}

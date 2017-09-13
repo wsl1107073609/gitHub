@@ -1,0 +1,98 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+    font-family: "微软雅黑";
+    background-color: #fff;
+    height: 100%;
+}
+
+
+#top {
+	height: 51px;
+	font-family: "微软雅黑";
+}
+
+.col-lg-6 {
+    width: 40%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.log-reg {
+	width: 180px;
+	height: 51px;
+	float: left;
+}
+
+.log-reg a {
+	color: white;
+	text-decoration: none;
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    color: #E60E0E;
+}
+
+.login {
+    height: 51px;
+    float: left;
+    padding: 15px;
+}
+
+.register {
+    height: 51px;
+    float: left;
+    padding-top: 15px;
+}
+
+
+
+p {
+	font-family: "微软雅黑";
+}
+
+.container2 {
+	text-align: center;
+}
+
+#footer {
+	height: 70px;
+	background-color: #222;
+    border-color: #080808;
+}
+
+#footer p {
+    font-size: 16px;
+    color: white;
+    /*font-family: "微软雅黑";*/
+    text-align: center;
+    line-height: 5px;
+    padding-top: 15px;
+}
+
+
+.log-reg1 {
+    height: 51px;
+    float: left;
+}
+
+.log-reg1 a {
+    color: white;
+    text-decoration: none;
+}
+
+.back {
+    height: 51px;
+    float: left;
+    padding: 15px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>使用ajax获取服务器文件asp</title>
+	<script>
+		function showHint(str){
+			var xmlhttp;
+			if(str == 0){
+				document.getElementById("textHint").value = "";
+				return;
+			}
+			if(window.XMLHttpRequest){
+				//IE7，.....
+				xmlhttp = new XMLHttpRequest();
+			}
+			else{
+				//IE5,IE6
+				xmlhttp = new ActiveXObject(Microsoft.XMLHTTP);
+			}
+			xmlhttp.onreadystatechange = function(){
+				if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+					document.getElementById("textHint").innerHTML = xmlhttp.responseText;
+				}
+			}
+			xmlhttp.open("GET","gethint.asp?q=" + str,true);
+			xmlhttp.send();
+
+		}
+
+	</script>
+
+</head>
+<body>
+	<h3>请输入A-Z任意的英文字母：</h3>
+	<form action="">
+		姓氏：<input type="text" id="fname" onkeyup="showHint(this.value)">
+	</form>
+	<p>建议：<span id="textHint"></span></p>
+	
+</body>
+</html>

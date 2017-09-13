@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test the try and catch</title>
+	
+	<script type="text/javascript">
+	//test the try and catch
+	function testError(){
+		try{
+			adddlert("Welcome guys!");
+		}
+		catch(error){
+			txt = "There is an error on this page.\n\n";
+			txt += "Error description: " + error.message + "\n\n";
+			txt += "Click ok to continue.\n\n";
+			alert(txt);
+		}
+	}
+
+	//test the throw
+	function testThrow(){
+		try{
+			var x = document.getElementById("demo").value;
+			if (x=="") throw "empty";
+			if (isNaN(x)) throw "not a number";
+			if (x<1) throw "the number is low";
+			if (x>5) throw "the number is high";
+		}
+		catch(error)
+		{
+			var y = document.getElementById("message");
+			y.innerHTML = "Error: " + error + ".";
+		}
+
+	}
+
+	</script>
+	
+</head>
+
+<body>
+	<button type="button" onclick="testError()">查看错误</button>
+
+	<h1>My first javaScript!</h1>
+	<p>Please input the number range 1 from 5</p>
+   	<input id="demo" type="text">
+   	<button type="button" onclick="testThrow()">check the input</button>
+   	<p id="message"></p>
+
+
+
+</body>
+
+</html>

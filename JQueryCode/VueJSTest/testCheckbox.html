@@ -1,0 +1,74 @@
+<!--
+v-model指令在表单控件元素上创建双向数据绑定，v-model并不关心表单控件初始化所生成的值，因为它会选择Vue实例数据来作为具体的值
+component是Vuejs最强大的功能之一，可以扩展html元素，封装可重用的代码
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test v-model & component</title>
+</head>
+<body>
+<!--test v-model：多选-->
+	<div id="example1">
+		<input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+		<label for="jack">Jack</label>
+		<input type="checkbox" id="john" value="John" v-model="checkedNames">
+		<label for="john">Jack</label>
+		<input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+		<label for="mike">Mike</label>		
+		<br>
+		<span>Checked names: {{ checkedNames }}</span>
+	</div>
+<!--test v-model: selected-->
+	<div id="example2">
+		<select v-model="selected">
+			<option v-for="option in options" v-bind:value="option.value">
+				{{ option.text }}
+			</option>
+		</select>
+		<span>Selected: {{ selected }}</span>
+	</div>
+
+<!--test component-->
+	<div id="example3">
+		<my-component></my-component>
+	</div>
+
+
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		var example1 = new Vue({
+			el: "#example1",
+			data: {
+				checkedNames: []
+			}
+		})
+
+		var example2 = new Vue({
+			el: "#example2",
+			data: {
+				selected: "A",
+				options: [
+					{text: "one", value: "A"},
+					{text: "two", value: "B"},
+					{text: "three", value: "C"}
+				]
+			}
+		})
+
+		//注册组件
+		Vue.component("my-component", {
+			template: "<div>A custom component!</div>"
+		})
+		//创建根实例
+		var example3 = new Vue({
+			el: "#example3"
+		})
+
+
+
+	</script>
+</body>
+</html>

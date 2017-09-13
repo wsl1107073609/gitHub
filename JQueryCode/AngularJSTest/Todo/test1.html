@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="">
+	<script type="text/javascript" src="angular.min.js"></script>
+	<title>To do List</title>
+
+</head>
+<body ng-controller="ToDoCtrl">
+	<div class="page-header">
+		<h1>
+			{{todo.user}}'s To Do List
+			<span class="label label-default" ng-class="warningLevel()" ng-hide="incompleteCount() === 0">
+				{{incompleteCount()}}
+			</span>
+		</h1>
+	</div>
+	<div class="panel">
+		<div class="input-group">
+			<input class="form-control" type="text" ng-model="actionText" placeholder="add new todo here">
+			<span class="input-group-btn">
+				<button class="btn btn-default" ng-click="addNewItem(actionText)">Add</button>
+			</span>
+		</div>
+
+	</div>
+</body>
+<script type="text/javascript">
+	var model = {
+		user: "Adam";
+		item: [
+				{action:"Buy flowers", done:false},
+				{action:"Buy foods", done:done},
+				{action:"Buy car", done:false}
+			]
+	};
+	var app = angular.module("myApp",[]);
+	app.controller("ToDoCtrl",function($scope){
+		
+	});
+</script>
+</html>

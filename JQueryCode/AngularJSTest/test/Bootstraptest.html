@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<div ng-controller="WelcomeController">
+		{{greeting}}
+	</div>
+	<div ng-controller="Customer">
+		{{name}}
+	</div>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module("demo", [])
+		app.controller("WelcomeController", function($scope){
+			$scope.greeting = "Welcome!";
+		});
+		app.controller("Customer", function($scope){
+			$scope.name = "Cherry";
+		});
+
+		//作用与ng-app的功能类似，需要注意的是：必须放在controller定义的后面
+		angular.bootstrap(document, ["demo"]);
+		angular.bootstrap(document, ["test"]);
+	</script>
+</body>
+</html>
+

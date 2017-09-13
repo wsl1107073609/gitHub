@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>DefinedPaginationTest</title>
+	<link rel="stylesheet" type="text/css" href="nibr-bootstrap.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="DefinedPagination.js"></script>
+</head>
+<body>
+	<div id="tableDiv">
+		
+	</div>
+	<div id="pagiDiv" style="float:right;padding-top:20px;padding-bottom:20px;">
+		
+	</div>
+	<script type="text/javascript">
+		
+		$(function(){
+			var data = [
+						{"Id":1,"Name":2,"Age":3},
+						{"Id":4,"Name":5,"Age":6},
+						{"Id":7,"Name":8,"Age":9},
+						{"Id":10,"Name":20,"Age":30},
+						{"Id":40,"Name":50,"Age":60},
+						{"Id":70,"Name":80,"Age":90},
+						{"Id":11,"Name":21,"Age":31},
+						{"Id":41,"Name":51,"Age":61},
+						{"Id":71,"Name":81,"Age":91}
+					];
+			var groupListCount = data.length;
+			var pageSize = 3;
+			var currentPage = 1;
+			if(groupListCount%pageSize == 0){
+				var countPage = groupListCount/pageSize;
+			}else{
+				var countPage = Math.ceil(groupListCount/pageSize);
+			}
+			typewriter("tableDiv","pagiDiv",groupListCount,pageSize,currentPage,countPage,data);
+
+		});
+		
+	</script>
+</body>
+</html>

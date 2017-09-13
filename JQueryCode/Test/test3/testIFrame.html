@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test iframe</title>
+	<script src="d3.js"></script>
+</head>
+<body>
+	<iframe id="left" name="left" width="40%" height="100px" src="about:blank"></iframe>
+	<iframe id="right" name="right" width="60%" height="200px" src="about:blank"></iframe>
+	<a href="http://www.baidu.com" target="left"> 在左框中打开链接 </a>
+	<a href="http://www.baidu.com" target="right"> 在右框中打开链接 </a>
+	<div>
+		<p></p>
+		<p></p>
+		<p></p>
+	</div>
+	<script type="text/javascript">
+		var str = "china";
+		var body = d3.select("body");
+		var p = body.selectAll("p");
+		p.datum(str);
+		p.text(function(d,i){
+			return "第" + i + "个元素绑定的数据是：" + d;
+		});
+
+	</script>
+</body>
+</html>

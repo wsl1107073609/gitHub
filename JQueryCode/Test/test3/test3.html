@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>create/insert/remove nodes</title>
+	<!--
+	<script type="text/javascript">
+		//show the current time
+	function startTime(){
+		var date = new Date();
+		var h = date.getHours();
+		var m = date.getMinutes();
+		var s = date.getSeconds();
+		
+		m = checkTime(m);
+		s = checkTime(s);
+
+		document.getElementById("txt").innerHTML = h + ":" + m + ":" + s;
+
+		t = setTimeout('startTime()', 500);
+
+	}
+
+	function checkTime(i){
+		if (i<10) {
+			i = "0" + i;				
+		}
+		return i;
+	}
+		
+	</script>
+-->
+</head>
+<body onload="startTime()">
+	<div id="div1">
+		<p id="p1">这是第一个段落</p>
+		<p id="p2">这是第二个段落</p>
+	</div>
+	<div id="txt">
+		
+	</div>
+
+	<!-- create elements   
+	<script type="text/javascript">
+		var para = document.createElement("p");
+		var node = document.createTextNode("这是一个新段落");
+		para.appendChild(node);
+
+		var element = document.getElementById("div1");
+		element.appendChild(para);
+
+	</script>
+	-->
+	<!-- delete elements 
+	<script type="text/javascript">
+		var parent = document.getElementById("div1");
+		var child = document.getElementById("p1");
+
+		parent.removeChild(child);
+
+		//parent.remove(child); //error:delete all p
+
+	</script>
+	-->
+
+	
+	<script type="text/javascript">
+
+		var str = "Hello world!"
+		//match the string
+		document.write(str.match("world") + "<br/>");
+		document.write(str.match("world") + "<br/>");
+		document.write(str.match("worldd") + "<br/>");
+		document.write(str.match("world!") + "<br/>");
+		//replace the string
+		document.write(str.replace(/world/,"everybody") + "<br/>");
+		//obtain the date/time...
+		document.write(Date() + "<br/>");
+
+		var d = new Date();
+		//show the seconds from 1970 to now
+		document.write("从1970年1月1日起到现在已经过了" + d.getTime() + "毫秒<br/>");
+		document.write(d.getDay());
+		//show the weekday
+		/*
+		var weekday = new Array(7);
+		weekday[0] = "星期日";
+		weekday[1] = "星期一";
+		weekday[2] = "星期二";
+		weekday[3] = "星期三";
+		weekday[4] = "星期四";
+		weekday[5] = "星期五";
+		weekday[6] = "星期六";
+		*/
+		var weekday = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六")
+		document.write("今天是：" + weekday[d.getDay()] + "<br/>");
+		
+
+
+	</script>
+	
+
+
+</body>
+</html>

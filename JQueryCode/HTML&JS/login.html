@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>LoginPage</title>
+	<!--
+  <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/login.css">
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+ <!-- <script type="text/javascript" src="js/validate.js"></script>-->
+
+  <script type="text/javascript">
+    function validate(thisform){  
+    //从login.html中获取数据
+    var userName = document.getElementById('inputSuccess3').value;
+    var userPassword = document.getElementById('inputGroupSuccess2').value;
+    
+    if(userName == "" || userPassword == ""){
+      alert("用户名和密码均不能为空！");
+      return false;
+    }
+    else{
+      
+    }
+
+}
+
+  </script>
+
+
+</head>
+<body>
+	<!--navigation-->
+  <div id="top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></a>
+        </div><!--/.nav-header-->
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#option">option</a></li>
+            <li><a href="#option">Profile</a></li> 
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li> 
+          </ul>
+          <div class="col-lg-6">
+              <div class="input-group">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Search</button>
+                </span>
+                <input type="text" class="form-control" placeholder="Search for...">
+              </div><!-- /input-group -->
+          </div><!-- /.col-lg-6 -->
+          <div class="log-reg1">
+            <div class="back">
+              <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
+              <a href="index.html">Back</a>
+            </div>
+        </div><!--/.nav-collapse -->  
+        
+    </nav>
+  </div>
+	<div id="content1">
+    <div class="content1-mid">
+      <div class="content1-mid-top">        
+        <h1>Welcome to login</h1>       
+        <!--<button type="button" name="" onClick="validate()">yanzheng</button>-->
+      </div>
+      <div class="content1-mid-mid">
+        <form class="form-horizontal" action="" method="" onsubmit="return validate(this)">
+          <div class="form-group has-success has-feedback">
+            <label class="control-label col-sm-3" for="inputSuccess3">userName:</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status">
+
+            </div>
+          </div>
+          <div class="form-group has-success has-feedback">
+            <label class="control-label col-sm-3" for="inputGroupSuccess2">userPassword:</label>
+            <div class="col-sm-7"> 
+              <input type="password" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status">
+            </div>
+          </div>
+          <div class="form-group has-success has-feedback">
+            <label class="control-label col-sm-3" for="inputGroupSuccess2">validateCode:</label>
+            <div class="col-sm-2"> 
+              <input type="text" class="form-control" id="inputGroupSuccess3" aria-describedby="inputGroupSuccess2Status">
+            </div>
+            <img src="2.jpg" width="100px" height="32px">&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="">Not clear? please change anthor.</a>
+          </div>
+
+          <div class="button">
+            <button type="submit" class="btn btn-primary">Login</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="resut" class="btn btn-primary">Reset&nbsp;</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+    
+  </div>
+
+  <div id="footer">
+    <p>copyright@cherrywsl.2016.3.11</p>
+    <p>Telephone:123456789&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address: xianfjdflakfa;faf</p>
+  </div>
+	
+</body>
+</html>
